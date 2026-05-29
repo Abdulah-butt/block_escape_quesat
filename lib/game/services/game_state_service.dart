@@ -7,6 +7,7 @@ import '../logic/star_calculator.dart';
 import '../models/block_model.dart';
 import '../models/level_model.dart';
 import '../models/move_model.dart';
+import 'audio_service.dart';
 import 'level_loader.dart';
 import 'progress_service.dart';
 
@@ -25,6 +26,7 @@ class GameStateService extends ChangeNotifier {
   final List<BlockModel> _blocks = <BlockModel>[];
   final List<MoveModel> _undoStack = <MoveModel>[];
   bool _completed = false;
+  bool _failed = false;
   bool _paused = false;
   int _moveCount = 0;
   int _earnedStars = 0;
@@ -36,6 +38,7 @@ class GameStateService extends ChangeNotifier {
   List<BlockModel> get blocks => List<BlockModel>.unmodifiable(_blocks);
   List<MoveModel> get undoStack => List<MoveModel>.unmodifiable(_undoStack);
   bool get completed => _completed;
+  bool get failed => _failed;
   bool get paused => _paused;
   int get moveCount => _moveCount;
   int get earnedStars => _earnedStars;
@@ -69,6 +72,7 @@ class GameStateService extends ChangeNotifier {
       ..addAll(level.blocks.map((BlockModel block) => block.clone()));
     _undoStack.clear();
     _completed = false;
+    _failed = false;
     _paused = false;
     _moveCount = 0;
     _earnedStars = 0;
@@ -116,7 +120,7 @@ class GameStateService extends ChangeNotifier {
     required int toRow,
     required int toCol,
   }) async {
-    if (_level == null) {
+    if (_level == null || _completed || _failed) {
       return;
     }
     final int fromRow = block.row;
@@ -140,7 +144,14 @@ class GameStateService extends ChangeNotifier {
     block.col = toCol;
     _moveCount++;
     _hintBlockId = null;
+    if (_moveCount > _level!.targetMoves) {
+      _failed = true;
+      notifyListeners();
+      AudioService.instance.playInvalidMove();
+      return;
+    }
     notifyListeners();
+    AudioService.instance.playMove();
     _checkWin();
   }
 
@@ -151,7 +162,7 @@ class GameStateService extends ChangeNotifier {
   }
 
   Future<void> undo() async {
-    if (_undoStack.isEmpty) {
+    if (_undoStack.isEmpty || _failed || _completed) {
       return;
     }
     final MoveModel move = _undoStack.removeLast();
@@ -174,13 +185,14 @@ class GameStateService extends ChangeNotifier {
   }
 
   Future<void> completeLevel() async {
-    if (_completed || _level == null) {
+    if (_completed || _failed || _level == null) {
       return;
     }
     _completed = true;
     _earnedStars = StarCalculator.starsForMoves(_moveCount, _level!.targetMoves);
     _earnedCoins = StarCalculator.coinsForStars(_earnedStars);
-    await progressService.completeLevel(_level!.id, _earnedStars, _earnedCoins);
+    _earnedCoins = await progressService.completeLevel(_level!.id, _earnedStars);
+    AudioService.instance.playWin();
     analyticsService.logLevelComplete(_level!.id, _moveCount, _earnedStars);
     notifyListeners();
   }
@@ -191,6 +203,7 @@ class GameStateService extends ChangeNotifier {
       return false;
     }
     setHintBlock(hint);
+    AudioService.instance.playHint();
     return true;
   }
 
@@ -217,10 +230,16 @@ class GameStateService extends ChangeNotifier {
   void _checkWin() {
     final LevelModel? level = _level;
     final BlockModel? hero = heroBlock;
-    if (level == null || hero == null) {
+    if (level == null || hero == null || _failed) {
       return;
     }
     if (hero.row == level.exit.row && hero.rightEdge == level.exit.col) {
+      if (_moveCount != level.targetMoves) {
+        _failed = true;
+        AudioService.instance.playInvalidMove();
+        notifyListeners();
+        return;
+      }
       completeLevel();
     }
   }

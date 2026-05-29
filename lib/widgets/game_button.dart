@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
+import '../game/services/audio_service.dart';
 import '../utils/constants.dart';
 
 class GameButton extends StatefulWidget {
@@ -43,10 +45,18 @@ class _GameButtonState extends State<GameButton> {
       duration: const Duration(milliseconds: 80),
       scale: _pressed ? 0.98 : 1.0,
       child: GestureDetector(
-        onTapDown: enabled ? (_) => setState(() => _pressed = true) : null,
-        onTapCancel: enabled ? () => setState(() => _pressed = false) : null,
-        onTapUp: enabled ? (_) => setState(() => _pressed = false) : null,
-        onTap: widget.onPressed,
+              onTapDown: enabled ? (_) => setState(() => _pressed = true) : null,
+              onTapCancel: enabled ? () => setState(() => _pressed = false) : null,
+              onTapUp: enabled ? (_) => setState(() => _pressed = false) : null,
+              onTap: enabled
+                  ? () async {
+                      await AudioService.instance.playButtonTap();
+                      if (AudioService.instance.vibrationEnabled) {
+                        await HapticFeedback.selectionClick();
+                      }
+                      widget.onPressed?.call();
+                    }
+                  : null,
         child: Container(
           constraints: BoxConstraints(minHeight: widget.minHeight),
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),

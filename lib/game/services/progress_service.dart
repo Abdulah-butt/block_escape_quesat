@@ -91,21 +91,39 @@ class ProgressService extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> completeLevel(int levelId, int stars, int earnedCoins) async {
+  Future<int> completeLevel(int levelId, int stars) async {
     final int currentStars = _starsByLevel[levelId] ?? 0;
-    if (stars > currentStars) {
-      _starsByLevel[levelId] = stars;
+    final int bestStars = stars > currentStars ? stars : currentStars;
+    final int previousReward = coinsForStars(currentStars);
+    final int bestReward = coinsForStars(bestStars);
+    final int rewardDelta = bestReward - previousReward;
+    if (bestStars > currentStars) {
+      _starsByLevel[levelId] = bestStars;
     }
     if (levelId >= _highestUnlockedLevel) {
       _highestUnlockedLevel = levelId + 1;
     }
     _totalCompletions++;
-    _coins = (_coins + earnedCoins).clamp(0, 999999).toInt();
+    _coins = (_coins + rewardDelta).clamp(0, 999999).toInt();
     await _prefs?.setInt(_kHighestUnlocked, _highestUnlockedLevel);
     await _prefs?.setInt(_kCompletions, _totalCompletions);
     await _prefs?.setInt(_kCoins, _coins);
     await _prefs?.setString(_kStarsMap, jsonEncode(_starsByLevel.map((int key, int value) => MapEntry<String, int>(key.toString(), value))));
     await _prefs?.setInt(_kLastPlayed, levelId);
     notifyListeners();
+    return rewardDelta;
+  }
+
+  int coinsForStars(int stars) {
+    if (stars >= 3) {
+      return 30;
+    }
+    if (stars == 2) {
+      return 20;
+    }
+    if (stars == 1) {
+      return 10;
+    }
+    return 0;
   }
 }

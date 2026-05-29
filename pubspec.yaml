@@ -35,3 +35,9 @@ flutter:
     - data/levels.json
     - assets/images/logo.png
     - assets/images/splash.png
+    - assets/audio/bgm_loop.wav
+    - assets/audio/button_tap.wav
+    - assets/audio/block_move.wav
+    - assets/audio/invalid_move.wav
+    - assets/audio/level_win.wav
+    - assets/audio/hint.wav

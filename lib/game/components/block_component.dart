@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import '../../utils/constants.dart';
 import '../block_escape_game.dart';
 import '../models/block_model.dart';
+import '../services/audio_service.dart';
 import '../services/game_state_service.dart';
 import 'board_component.dart';
 
@@ -57,7 +58,7 @@ class BlockComponent extends PositionComponent
   @override
   void onDragStart(DragStartEvent event) {
     super.onDragStart(event);
-    if (state.completed || state.paused) {
+    if (state.completed || state.failed || state.paused) {
       return;
     }
     _dragging = true;
@@ -73,7 +74,7 @@ class BlockComponent extends PositionComponent
   @override
   void onDragUpdate(DragUpdateEvent event) {
     super.onDragUpdate(event);
-    if (!_dragging || state.completed || state.paused) {
+    if (!_dragging || state.completed || state.failed || state.paused) {
       return;
     }
     final double deltaX = event.canvasDelta.x;
@@ -104,6 +105,7 @@ class BlockComponent extends PositionComponent
     }
     _dragging = false;
     _scaleTarget = 1.0;
+    final bool horizontal = block.direction == BlockDirection.horizontal;
     final int snappedDelta = block.direction == BlockDirection.horizontal
         ? (_targetOffsetX / board.cellSize).round()
         : (_targetOffsetY / board.cellSize).round();
@@ -122,6 +124,13 @@ class BlockComponent extends PositionComponent
         HapticFeedback.lightImpact();
       }
     } else {
+      final double travelled = horizontal ? _dragDistanceX.abs() : _dragDistanceY.abs();
+      if (travelled > board.cellSize * 0.35) {
+        AudioService.instance.playInvalidMove();
+        if (state.progressService.vibrationEnabled) {
+          HapticFeedback.vibrate();
+        }
+      }
       _targetOffsetX = 0.0;
       _targetOffsetY = 0.0;
       _dragDistanceX = 0.0;
@@ -163,6 +172,7 @@ class BlockComponent extends PositionComponent
   void render(Canvas canvas) {
     final Rect rect = Offset.zero & size.toSize();
     final double scale = _pressScale;
+    final bool isHinted = state.hintBlockId == blockId;
     final Paint shadow = Paint()..color = Colors.black.withValues(alpha: 0.22);
     final Paint fill = Paint()
       ..shader = LinearGradient(
@@ -176,6 +186,12 @@ class BlockComponent extends PositionComponent
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2
       ..color = Colors.white.withValues(alpha: 0.12);
+    final Paint hintGlow = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 6
+      ..color = kAccent.withValues(alpha: isHinted ? 0.95 : 0.0);
+    final Paint hintFill = Paint()
+      ..color = kAccent.withValues(alpha: isHinted ? 0.14 : 0.0);
 
     final double shakeOffset = _shakeTimer > 0 ? sin((_shakeTimer * 40) * pi) * 4 : 0;
     canvas.save();
@@ -192,6 +208,16 @@ class BlockComponent extends PositionComponent
       RRect.fromRectAndRadius(rect.deflate(1), const Radius.circular(14)),
       fill,
     );
+    if (isHinted) {
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect.deflate(-2), const Radius.circular(18)),
+        hintGlow,
+      );
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect.deflate(1), const Radius.circular(14)),
+        hintFill,
+      );
+    }
     canvas.drawRRect(
       RRect.fromRectAndRadius(rect.deflate(1), const Radius.circular(14)),
       border,
@@ -219,6 +245,23 @@ class BlockComponent extends PositionComponent
       painter.paint(
         canvas,
         Offset(rect.center.dx - painter.width / 2, rect.center.dy - painter.height / 2),
+      );
+    }
+    if (isHinted) {
+      final TextPainter hintPainter = TextPainter(
+        text: const TextSpan(
+          text: '!',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 15,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      hintPainter.paint(
+        canvas,
+        Offset(rect.right - hintPainter.width - 8, rect.top + 4),
       );
     }
     canvas.restore();

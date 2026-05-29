@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:upgrader/upgrader.dart';
 
 import '../game/services/progress_service.dart';
+import '../monetization/update_service.dart';
 import '../utils/constants.dart';
 import '../widgets/coin_display.dart';
 import '../widgets/game_button.dart';
@@ -26,6 +28,7 @@ class MainMenuScreen extends StatelessWidget {
         ),
         child: Stack(
           children: <Widget>[
+            const _MenuUpdatePrompt(),
             const _FloatingBackdrop(),
             SafeArea(
               child: Padding(
@@ -296,6 +299,95 @@ class _GuideStep extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class _MenuUpdatePrompt extends StatefulWidget {
+  const _MenuUpdatePrompt();
+
+  @override
+  State<_MenuUpdatePrompt> createState() => _MenuUpdatePromptState();
+}
+
+class _MenuUpdatePromptState extends State<_MenuUpdatePrompt> {
+  static bool _shownThisSession = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((Duration _) {
+      _showIfNeeded();
+    });
+  }
+
+  Future<void> _showIfNeeded() async {
+    if (!mounted || _shownThisSession) {
+      return;
+    }
+
+    final Upgrader upgrader = UpdateService.instance.upgrader;
+    if (!upgrader.shouldDisplayUpgrade()) {
+      return;
+    }
+
+    _shownThisSession = true;
+    await upgrader.saveLastAlerted();
+
+    if (!mounted) {
+      return;
+    }
+
+    final UpgraderMessages messages = upgrader.determineMessages(context);
+    final String title = messages.message(UpgraderMessage.title) ?? 'Update available';
+    final String body = upgrader.body(messages);
+    final String? releaseNotes = upgrader.releaseNotes;
+
+    await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      useRootNavigator: true,
+      builder: (BuildContext dialogContext) {
+        return PopScope(
+          canPop: false,
+          child: AlertDialog(
+            title: Text(title),
+            content: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(body),
+                  if (releaseNotes != null && releaseNotes.isNotEmpty) ...<Widget>[
+                    const SizedBox(height: 16),
+                    Text(
+                      messages.message(UpgraderMessage.releaseNotes) ?? 'Release notes',
+                      style: Theme.of(dialogContext).textTheme.titleSmall,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(releaseNotes),
+                  ],
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              FilledButton(
+                onPressed: () async {
+                  await upgrader.sendUserToAppStore();
+                },
+                child: Text(
+                  messages.message(UpgraderMessage.buttonTitleUpdate) ?? 'Update now',
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox.shrink();
   }
 }
 

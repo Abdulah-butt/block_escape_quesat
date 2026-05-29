@@ -10,6 +10,7 @@ import '../game/services/game_state_service.dart';
 import '../utils/constants.dart';
 import '../widgets/coin_display.dart';
 import 'level_complete_screen.dart';
+import 'level_failed_screen.dart';
 import 'pause_menu.dart';
 
 class GameScreen extends StatefulWidget {
@@ -93,6 +94,77 @@ class _GameScreenState extends State<GameScreen> {
 
   void _gotoMenu() => context.go('/menu');
   void _gotoLevels() => context.go('/levels');
+  void _showInfo() {
+    showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(kPagePadding),
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: kSurface,
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      const Icon(Icons.info_rounded, color: kAccent),
+                      const SizedBox(width: 10),
+                      Text(
+                        'Quick Tips',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  const _InfoTip(
+                    title: 'Goal',
+                    body: 'Move the red/orange hero block to the exit on the right.',
+                  ),
+                  const SizedBox(height: 10),
+                  const _InfoTip(
+                    title: 'Drag',
+                    body: 'Blocks slide only in their own direction. Use short, smooth drags.',
+                  ),
+                  const SizedBox(height: 10),
+                  const _InfoTip(
+                    title: 'Strategy',
+                    body: 'Free the blocks blocking the hero row first, then clear the lane.',
+                  ),
+                  const SizedBox(height: 10),
+                  const _InfoTip(
+                    title: 'Rewards',
+                    body: 'You earn rewards only the first time you clear a level or improve your best stars.',
+                  ),
+                  const SizedBox(height: 18),
+                  SizedBox(
+                    width: double.infinity,
+                    child: IconButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      icon: const Icon(Icons.close_rounded),
+                      color: kTextPrimary,
+                      style: IconButton.styleFrom(
+                        backgroundColor: kSurfaceLight,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   void _restart() {
     _completionHandled = false;
     _state.reset();
@@ -136,7 +208,7 @@ class _GameScreenState extends State<GameScreen> {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          'Moves: ${_state.moveCount}  |  Target: ${level.targetMoves}',
+                          'Moves: ${_state.moveCount}  |  Target (shortest): ${level.targetMoves}',
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
@@ -203,6 +275,13 @@ class _GameScreenState extends State<GameScreen> {
                     },
                     onMenu: _gotoMenu,
                   ),
+                  LevelFailedScreen(
+                    visible: _state.failed,
+                    levelId: level.id,
+                    targetMoves: level.targetMoves,
+                    onRetry: _restart,
+                    onMenu: _gotoMenu,
+                  ),
                 ],
               ),
             ),
@@ -219,7 +298,7 @@ class _GameScreenState extends State<GameScreen> {
                       onPressed: _restart,
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: _GameIconActionButton(
                       tooltip: 'Undo',
@@ -233,7 +312,7 @@ class _GameScreenState extends State<GameScreen> {
                           : null,
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: _GameIconActionButton(
                       tooltip: 'Hint',
@@ -241,6 +320,16 @@ class _GameScreenState extends State<GameScreen> {
                       backgroundColor: kAccent,
                       iconColor: Colors.white,
                       onPressed: _showHint,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _GameIconActionButton(
+                      tooltip: 'Info',
+                      icon: Icons.info_rounded,
+                      backgroundColor: kSurfaceLight,
+                      iconColor: Colors.white,
+                      onPressed: _showInfo,
                     ),
                   ),
                 ],
@@ -313,6 +402,45 @@ class _GameIconActionButtonState extends State<_GameIconActionButton> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _InfoTip extends StatelessWidget {
+  const _InfoTip({required this.title, required this.body});
+
+  final String title;
+  final String body;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: kSurfaceLight.withValues(alpha: 0.72),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            title,
+            style: const TextStyle(
+              color: kTextPrimary,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            body,
+            style: const TextStyle(
+              color: kTextSecondary,
+              height: 1.35,
+            ),
+          ),
+        ],
       ),
     );
   }
