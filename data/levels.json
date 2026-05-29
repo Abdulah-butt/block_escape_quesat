@@ -1,0 +1,1967 @@
+[
+  {
+    "id": 1,
+    "chapter": 1,
+    "world": "Beginner",
+    "difficulty": "Tutorial",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 3,
+    "exit": {
+      "row": 1,
+      "col": 5
+    },
+    "hint": "Move the blocker down, then slide right.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 1,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 0,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 3,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "chapter": 1,
+    "world": "Beginner",
+    "difficulty": "Tutorial",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 4,
+    "exit": {
+      "row": 1,
+      "col": 5
+    },
+    "hint": "Clear the vertical block before sliding through.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 1,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 1,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 3,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "chapter": 1,
+    "world": "Beginner",
+    "difficulty": "Easy",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 4,
+    "exit": {
+      "row": 1,
+      "col": 5
+    },
+    "hint": "The wide block needs room. Shift helpers first.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 1,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 1,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 3,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "chapter": 1,
+    "world": "Beginner",
+    "difficulty": "Easy",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 5,
+    "exit": {
+      "row": 1,
+      "col": 5
+    },
+    "hint": "Two moves up top free your path.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 1,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 0,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 3,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "chapter": 1,
+    "world": "Beginner",
+    "difficulty": "Easy",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 5,
+    "exit": {
+      "row": 1,
+      "col": 5
+    },
+    "hint": "Think ahead \u2014 one wrong move jams everything.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 1,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 1,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 3,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "chapter": 2,
+    "world": "Beginner",
+    "difficulty": "Easy",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 6,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "The vertical pin is your first unlock.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 1,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 0,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "chapter": 2,
+    "world": "Beginner",
+    "difficulty": "Easy",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 6,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "Work backwards from the exit.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 1,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 0,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 4,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "chapter": 2,
+    "world": "Beginner",
+    "difficulty": "Medium",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 7,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "The wide bar must shift before anything else.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 1,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 0,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "chapter": 2,
+    "world": "Beginner",
+    "difficulty": "Medium",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 7,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "Upper and lower blocks must cooperate.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 1,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 0,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 4,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "chapter": 2,
+    "world": "Beginner",
+    "difficulty": "Medium",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 8,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "Five blocks \u2014 plan the domino chain.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 1,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 0,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 3,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "chapter": 3,
+    "world": "Classic",
+    "difficulty": "Medium",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 9,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "The bottom-left corner hides the key move.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 4,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 1,
+        "col": 0,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "chapter": 3,
+    "world": "Classic",
+    "difficulty": "Medium",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 9,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "Double vertical blockers \u2014 unstack them in order.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 4,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 0,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "chapter": 3,
+    "world": "Classic",
+    "difficulty": "Medium",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 10,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "The wide blocker controls two lanes at once.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 4,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 1,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "chapter": 3,
+    "world": "Classic",
+    "difficulty": "Hard",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 10,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "Five obstacles \u2014 prioritize the row-2 blockers.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 4,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 0,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "chapter": 3,
+    "world": "Classic",
+    "difficulty": "Hard",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 11,
+    "exit": {
+      "row": 2,
+      "col": 5
+    },
+    "hint": "Your hero row is a traffic jam \u2014 clear each car.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 2,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 4,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "chapter": 3,
+    "world": "Classic",
+    "difficulty": "Hard",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 11,
+    "exit": {
+      "row": 3,
+      "col": 5
+    },
+    "hint": "Slide the guard down before pushing past.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 1,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 4,
+        "col": 3,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "chapter": 4,
+    "world": "Classic",
+    "difficulty": "Hard",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 12,
+    "exit": {
+      "row": 3,
+      "col": 5
+    },
+    "hint": "Six obstacles \u2014 start with what\u2019s farthest from the exit.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 1,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 5,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 4,
+        "col": 0,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "chapter": 4,
+    "world": "Classic",
+    "difficulty": "Hard",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 12,
+    "exit": {
+      "row": 3,
+      "col": 5
+    },
+    "hint": "The corridor is narrow \u2014 squeeze through the gap.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 1,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 4,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 0,
+        "col": 0,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "chapter": 4,
+    "world": "Classic",
+    "difficulty": "Hard",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 13,
+    "exit": {
+      "row": 3,
+      "col": 5
+    },
+    "hint": "The tall stack on the left blocks your first move.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 1,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 0,
+        "col": 3,
+        "width": 1,
+        "height": 3,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 4,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "chapter": 4,
+    "world": "Classic",
+    "difficulty": "Hard",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 13,
+    "exit": {
+      "row": 3,
+      "col": 5
+    },
+    "hint": "One tall blocker at col 3 requires two helpers to move.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 1,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 5,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 4,
+        "col": 0,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "chapter": 4,
+    "world": "Classic",
+    "difficulty": "Expert",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 14,
+    "exit": {
+      "row": 3,
+      "col": 5
+    },
+    "hint": "Every block is linked \u2014 move one wrong and you\u2019ll need to restart.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 3,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 5,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 1,
+        "col": 1,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 2,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "chapter": 4,
+    "world": "Classic",
+    "difficulty": "Expert",
+    "rows": 6,
+    "cols": 6,
+    "targetMoves": 14,
+    "exit": {
+      "row": 3,
+      "col": 5
+    },
+    "hint": "The corner trap: escape it before chasing the exit.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 3,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 5,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 4,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 1,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 0,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "chapter": 5,
+    "world": "Elite",
+    "difficulty": "Expert",
+    "rows": 7,
+    "cols": 7,
+    "targetMoves": 15,
+    "exit": {
+      "row": 3,
+      "col": 6
+    },
+    "hint": "Bigger grid, bigger maze. The center is the key.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 0,
+        "col": 3,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 5,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 3,
+        "col": 2,
+        "width": 1,
+        "height": 3,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 1,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b6",
+        "row": 6,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "chapter": 5,
+    "world": "Elite",
+    "difficulty": "Expert",
+    "rows": 7,
+    "cols": 7,
+    "targetMoves": 15,
+    "exit": {
+      "row": 3,
+      "col": 6
+    },
+    "hint": "Three vertical guards block your lane \u2014 unpin them left to right.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 3,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 2,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 2,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 5,
+        "col": 3,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 1,
+        "col": 5,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b6",
+        "row": 6,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "chapter": 5,
+    "world": "Elite",
+    "difficulty": "Expert",
+    "rows": 7,
+    "cols": 7,
+    "targetMoves": 16,
+    "exit": {
+      "row": 4,
+      "col": 6
+    },
+    "hint": "Exit is lower now. Re-route your whole strategy.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 4,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 3,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 5,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 1,
+        "col": 1,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 2,
+        "col": 5,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b6",
+        "row": 6,
+        "col": 2,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "chapter": 5,
+    "world": "Elite",
+    "difficulty": "Expert",
+    "rows": 7,
+    "cols": 7,
+    "targetMoves": 17,
+    "exit": {
+      "row": 4,
+      "col": 6
+    },
+    "hint": "A tall pillar and wide wall share a hidden chain.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 4,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 3,
+        "col": 2,
+        "width": 1,
+        "height": 3,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 2,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 5,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 1,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b6",
+        "row": 6,
+        "col": 5,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "chapter": 5,
+    "world": "Elite",
+    "difficulty": "Expert",
+    "rows": 7,
+    "cols": 7,
+    "targetMoves": 18,
+    "exit": {
+      "row": 4,
+      "col": 6
+    },
+    "hint": "Six obstacles in a 7x7 maze \u2014 count your moves carefully.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 4,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 3,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 2,
+        "col": 2,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 5,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 1,
+        "col": 5,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b6",
+        "row": 6,
+        "col": 3,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "chapter": 6,
+    "world": "Master",
+    "difficulty": "Master",
+    "rows": 7,
+    "cols": 7,
+    "targetMoves": 19,
+    "exit": {
+      "row": 4,
+      "col": 6
+    },
+    "hint": "The master level \u2014 every block is someone else\u2019s problem until it becomes yours.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 4,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 3,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 2,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 5,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 1,
+        "col": 4,
+        "width": 1,
+        "height": 3,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b6",
+        "row": 6,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b7",
+        "row": 3,
+        "col": 5,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "chapter": 6,
+    "world": "Master",
+    "difficulty": "Master",
+    "rows": 7,
+    "cols": 7,
+    "targetMoves": 20,
+    "exit": {
+      "row": 5,
+      "col": 6
+    },
+    "hint": "Row 5 exit \u2014 the lowest run yet. Rethink everything.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 5,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 4,
+        "col": 2,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 3,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 4,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 6,
+        "col": 3,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 2,
+        "col": 5,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b6",
+        "row": 1,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b7",
+        "row": 5,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "chapter": 6,
+    "world": "Master",
+    "difficulty": "Master",
+    "rows": 7,
+    "cols": 7,
+    "targetMoves": 22,
+    "exit": {
+      "row": 5,
+      "col": 6
+    },
+    "hint": "The Grand Finale \u2014 22 moves, 7 blocks, no second chances.",
+    "blocks": [
+      {
+        "id": "hero",
+        "row": 5,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": true
+      },
+      {
+        "id": "b1",
+        "row": 4,
+        "col": 3,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b2",
+        "row": 3,
+        "col": 2,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b3",
+        "row": 0,
+        "col": 0,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b4",
+        "row": 6,
+        "col": 1,
+        "width": 2,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b5",
+        "row": 1,
+        "col": 5,
+        "width": 1,
+        "height": 3,
+        "direction": "vertical",
+        "isHero": false
+      },
+      {
+        "id": "b6",
+        "row": 2,
+        "col": 0,
+        "width": 3,
+        "height": 1,
+        "direction": "horizontal",
+        "isHero": false
+      },
+      {
+        "id": "b7",
+        "row": 5,
+        "col": 4,
+        "width": 1,
+        "height": 2,
+        "direction": "vertical",
+        "isHero": false
+      }
+    ]
+  }
+]

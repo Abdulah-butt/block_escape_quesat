@@ -1,0 +1,37 @@
+name: block_escape_quest
+description: Block Escape Quest
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flame: ^1.17.0
+  shared_preferences: ^2.2.3
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  audioplayers: ^6.0.0
+  confetti: ^0.8.0
+  go_router: ^17.2.3
+  provider: ^6.1.2
+  equatable: ^2.0.5
+  collection: ^1.18.0
+  upgrader: ^13.4.0
+  share_plus: ^13.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.13
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - data/levels.json
+    - assets/images/logo.png
+    - assets/images/splash.png
